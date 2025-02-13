@@ -179,14 +179,20 @@ jobs:
         run: |
           cd build
           file iqtree2.exe | grep x86-64
+      - name: Copy libs
+        shell: bash
+        run: |
+          cd build
+          cp ..\lib\libiomp5md.dll .
+          cp ..\lib\pthreadVC2.dll .
       - name: Upload artifact
         uses: actions/upload-artifact@v4
         with:
           name: ${{ runner.os }}-${{ runner.arch }}-build
           path: |
             build\iqtree2.exe
-            lib\libiomp5md.dll
-            lib\pthreadVC2.dll
+            build\libiomp5md.dll
+            build\pthreadVC2.dll
       - name: Simple test
         run: |-
           ls build
