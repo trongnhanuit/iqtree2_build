@@ -185,6 +185,8 @@ jobs:
           name: ${{ runner.os }}-${{ runner.arch }}-build
           path: |
             build\iqtree2.exe
+            ..\lib\libiomp5md.dll
+            ..\lib\pthreadVC2.dll
       - name: Simple test
         run: |-
           ls build
