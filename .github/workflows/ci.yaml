@@ -180,11 +180,10 @@ jobs:
           cd build
           file iqtree2.exe | grep x86-64
       - name: Copy libs
-        shell: bash
+        shell: cmd
         run: |
-          cd build
-          cp ..\lib\libiomp5md.dll .
-          cp ..\lib\pthreadVC2.dll .
+          cp lib\libiomp5md.dll build\
+          cp lib\pthreadVC2.dll build\
       - name: Upload artifact
         uses: actions/upload-artifact@v4
         with:
