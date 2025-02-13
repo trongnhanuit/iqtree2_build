@@ -169,7 +169,7 @@ jobs:
             -DCMAKE_MAKE_PROGRAM=mingw32-make ^
             -DBoost_INCLUDE_DIR=${{steps.install-boost.outputs.BOOST_ROOT}}/include ^
             -DBoost_LIBRARY_DIRS=${{steps.install-boost.outputs.BOOST_ROOT}}/lib ^
-            -DIQTREE_FLAGS="cpp14" ..
+            -DIQTREE_FLAGS="cpp14 static" ..
           make -j
         env:
           BOOST_ROOT: ${{ steps.install-boost.outputs.BOOST_ROOT }}
