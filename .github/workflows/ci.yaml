@@ -163,6 +163,7 @@ jobs:
           mkdir build
           cd build
           cmake -G "MinGW Makefiles" ^
+            -DUSE_CMAPLE=OFF ^
             -DCMAKE_C_COMPILER=clang -DCMAKE_CXX_COMPILER=clang++ ^
             -DCMAKE_C_FLAGS=--target=x86_64-pc-windows-gnu ^
             -DCMAKE_CXX_FLAGS=--target=x86_64-pc-windows-gnu ^
